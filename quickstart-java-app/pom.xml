@@ -2,13 +2,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.sivalabs</groupId>
+  <groupId>com.sivalabs.maven.archetypes</groupId>
   <artifactId>quickstart-java-app</artifactId>
   <version>0.0.1</version>
   <packaging>jar</packaging>
 
   <name>quickstart-java-app</name>
   <url>http://sivalabs.blogspot.in</url>
+  <description>Java app with JDK 1.6 and SLF4J configuration.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -93,4 +94,5 @@
 		</dependency> 
           
   </dependencies>
+  
 </project>

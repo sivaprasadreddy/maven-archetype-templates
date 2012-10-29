@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.sivalabs</groupId>
+  <groupId>com.sivalabs.maven.archetypes</groupId>
   <artifactId>quickstart-springmvc-jpa</artifactId>
   <packaging>war</packaging>
   <version>0.0.1</version>
@@ -9,7 +9,7 @@
   
   <url>http://sivalabs.blogspot.in</url>
 
-  <description>A Maven project using SpringMVC 3.1.x, JPA2(Hibernate4.x) and Log4j/Logback configuration.</description>
+  <description>A Maven project using SpringMVC 3.1.x, JPA2(Hibernate4.x), Apache Tiles, jQuery, SpringSecurity and Log4j/Logback configuration.</description>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,6 +21,7 @@
     
     <spring.version>3.1.0.RELEASE</spring.version>
     <spring.data.jpa.version>1.1.0.RELEASE</spring.data.jpa.version>
+    <spring-security.version>3.1.1.RELEASE</spring-security.version>
       
     <aspectj.version>1.6.8</aspectj.version>
     <cglib.version>2.2</cglib.version>
@@ -39,6 +40,7 @@
     <jsp.version>2.1</jsp.version>
     <jstl.version>1.2</jstl.version>
     <taglibs-standard.version>1.1.2</taglibs-standard.version>
+    <tiles.version>2.2.2</tiles.version>
     
     <maven.compiler.plugin>2.3.2</maven.compiler.plugin>
     <maven.failsafe.plugin>2.4.3-alpha-1</maven.failsafe.plugin>
@@ -248,6 +250,32 @@
 	            </exclusions>
 	        </dependency>
 	        
+	        <dependency>  
+		       <groupId>org.springframework.security</groupId>  
+		       <artifactId>spring-security-core</artifactId>  
+		       <version>${spring-security.version}</version>  
+		     </dependency>  
+		     <dependency>  
+		       <groupId>org.springframework.security</groupId>  
+		       <artifactId>spring-security-web</artifactId>  
+		       <version>${spring-security.version}</version>  
+		     </dependency>  
+		     <dependency>  
+		       <groupId>org.springframework.security</groupId>  
+		       <artifactId>spring-security-config</artifactId>  
+		       <version>${spring-security.version}</version>  
+		     </dependency>  
+		     <dependency>  
+		       <groupId>org.springframework.security</groupId>  
+		       <artifactId>spring-security-taglibs</artifactId>  
+		       <version>${spring-security.version}</version>  
+		     </dependency>  
+		     <dependency>  
+		       <groupId>org.springframework.security</groupId>  
+		       <artifactId>spring-security-acl</artifactId>  
+		       <version>${spring-security.version}</version>  
+		     </dependency>
+		     
 			<dependency>
 	            <groupId>org.aspectj</groupId>
 	            <artifactId>aspectjrt</artifactId>
@@ -369,5 +397,22 @@
 			<version>${jstl.version}</version>
 		</dependency>
 		
+		<dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-core</artifactId>
+            <version>${tiles.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-jsp</artifactId>
+            <version>${tiles.version}</version>
+        </dependency>
+        
   </dependencies>
 </project>

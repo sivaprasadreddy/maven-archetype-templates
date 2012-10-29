@@ -1,0 +1,117 @@
+body
+{
+
+	font-family: 'Trebuchet MS',verdana, sans-serif, monospace;
+	font-size: 12px;
+}
+
+.site
+{
+	text-align: center;
+	border: 1px solid #002952;
+	width: 1000px;
+	
+}
+
+.header
+{
+	background-color: #002952;
+	height: 80px;
+	font-size: 30px;
+	color : #FFF;
+	text-align: left;
+}
+
+.footer
+{
+	background-color: #002952;
+	height: 25;
+	font-size: 14px;
+	color : #FFF;
+	text-align: center;
+}
+
+.leftPanel
+{
+	width: 250;
+}
+.workPanel
+{
+	
+	padding: 5px 5px 5px 5px;
+
+}
+
+.nav
+{
+
+	padding: 1px 1px 1px 1px;
+	background-color: #ADC2D6;
+	border: 1px solid #002952;
+}
+
+.userBanner
+{
+	text-align: right;
+	background-color: #002952;
+}
+
+.tbl 
+{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.tbl, th, td 
+{
+	border: 0px solid black;
+}
+
+th
+{
+	background-color: #6699FF;
+}
+tr.odd
+{
+	background-color: #FFFFFF;
+}
+tr.even
+{
+	background-color: #B2CCFF;
+}
+
+.link
+{
+	text-decoration: none;
+	padding: 1px;
+	background-color: #002952;
+	color: #FFF;
+	font-size: 14px;
+	font-family: 'Trebuchet MS';
+}
+
+.textLabel
+{
+	background-color: #002952;
+	color: #FFF;
+}
+
+.error
+{
+	color: 	#FF0000;
+}
+
+.dataTable 
+{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.dataTable, .dataTable.th, .dataTable.td 
+{
+	border: 1px solid black;
+}
+
+.cursor {  
+	cursor: pointer;
+}
