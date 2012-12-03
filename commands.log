@@ -1,0 +1,64 @@
+
+
+cd quickstart-java-app
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype
+mvn clean install
+cd ../../../../
+
+cd quickstart-spring-app
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype
+mvn clean install
+cd ../../../../
+
+cd quickstart-spring-jsf-jpa
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype
+mvn clean install
+cd ../../../../
+
+cd quickstart-springmvc
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype
+mvn clean install
+cd ../../../../
+
+cd quickstart-springmvc-jpa
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype
+mvn clean install
+cd ../../../../
+
+cd quickstart-springmvc-mybatis
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype
+mvn clean install
+cd ../../../../
+
+cd quickstart-springmvc-security
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype
+mvn clean install
+cd ../../../../
+
+cd quickstart-springmvc-sitemesh
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype
+mvn clean install
+cd ../../../../
+
+cd quickstart-web-app
+mvn clean
+mvn archetype:create-from-project
+cd target/generated-sources/archetype
+mvn clean install
+cd ../../../../
