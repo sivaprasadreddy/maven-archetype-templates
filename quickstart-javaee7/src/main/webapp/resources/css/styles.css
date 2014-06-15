@@ -1,0 +1,22 @@
+
+#wrapper{
+   width:1000px;
+   margin:0 auto;
+   text-align:left;
+}
+
+.header {
+    height:50px;
+    background:#F0F0F0;
+    border:1px solid #CCC;
+    width:1000px;
+    margin:5px auto;
+}
+
+.mytable td {
+    vertical-align: top;
+}
+
+.ui-widget, .ui-widget .ui-widget {
+    font-size: 12px !important;
+}

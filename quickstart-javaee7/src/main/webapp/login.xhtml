@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/publicTemplate.xhtml">
+
+	<ui:define name="bodyContent">
+	
+	<h:form style="width: 350px; margin: 0 auto;">
+		<p:growl autoUpdate="true" severity="info" globalOnly="true"/>
+		<p:panel header="User Login Form">
+		<p:messages globalOnly="true" severity="error"/>
+		<h:panelGrid columns="3" title="User Login Form">
+			<h:outputLabel value="Email :" />
+			<p:inputText id="email" value="#{userController.email}" required="true" label="Email" requiredMessage="Email is required"/>
+			<p:message for="email" display="icon"/>
+			<h:outputLabel value="Password :" />
+			<p:password id="password" value="#{userController.password}" required="true" label="Password" requiredMessage="Password is required"/>
+			<p:message for="password" display="icon"/>
+			
+			<p:commandButton value="Login" action="#{userController.login}" update="@form"/>
+			<p:commandButton value="Reset" type="reset"/>
+		</h:panelGrid>	
+		<br/>
+		
+		</p:panel>	
+	</h:form>
+
+</ui:define>
+
+</ui:composition>
+

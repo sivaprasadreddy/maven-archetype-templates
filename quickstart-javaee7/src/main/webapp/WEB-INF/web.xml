@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	
+  <context-param>
+    <param-name>javax.faces.PROJECT_STAGE</param-name>
+    <param-value>Development</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>FacesServlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FacesServlet</servlet-name>
+    <url-pattern>*.jsf</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+    <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+    <location>/index.jsf?faces-redirect=true</location>
+</error-page>
+
+<!-- 
+	<data-source>
+	    <name>jdbc/TweeterDS</name>
+	    <class-name>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</class-name>
+	    <server-name>localhost</server-name>
+	    <database-name>tweeter</database-name>
+	    <user>root</user>
+	    <password>admin</password>
+	    <transactional>true</transactional>
+	    <isolation-level>TRANSACTION_READ_COMMITTED</isolation-level>
+	    <initial-pool-size>2</initial-pool-size>
+	    <max-pool-size>10</max-pool-size>
+	    <min-pool-size>5</min-pool-size>
+	    <max-statements>0</max-statements>
+	</data-source>
+ -->
+</web-app>
