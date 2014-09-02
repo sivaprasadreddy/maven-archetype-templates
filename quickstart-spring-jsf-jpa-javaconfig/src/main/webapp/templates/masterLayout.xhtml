@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html" locale="en">
+    <h:head>
+    	<title>#{msg['app.title']}</title>
+        <f:facet name="first">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="pragma" content="no-cache"/>
+            <meta http-equiv="cache-control" content="no-cache"/>
+            <meta http-equiv="expires" content="0"/>
+        </f:facet>
+        
+        <f:facet name="last">
+			<h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
+			<h:outputScript library="js" name="app.js"></h:outputScript>
+		</f:facet>
+        <ui:insert name="head"/>
+    </h:head>
+    <h:body>
+    	<p:layout fullPage="true">  
+  
+		    <p:layoutUnit position="north" size="100">  
+		        <div class="header">#{msg['app.title']}</div>
+		        <div align="right">
+		        <h:form id="mainMenuForm">
+				        
+		        	<p:themeSwitcher value="#{userSettingsController.selectedTheme}" 
+		        					style="width:165px" var="theme">  
+						<f:selectItem itemLabel="Select Theme" itemValue="" />  
+						<f:selectItems value="#{userSettingsController.themePojos}" var="t" 
+										itemLabel="#{t.name}" itemValue="#{t}"/>
+							<p:ajax listener="#{userSettingsController.saveUserTheme}"/>	  
+						<p:column>  
+							#{theme.name}  
+						</p:column>
+						<p:column>  
+							<p:graphicImage value="/resources/images/themes/#{theme.image}"/>  
+						</p:column>
+					</p:themeSwitcher>
+					<br/>
+		        	<p:outputLabel value="#{userController.loginUser.email}! " 
+		        					rendered="#{userController.userLoggedin}"/>
+		        	<p:commandLink value=" Logout" action="#{userController.logout}" 
+		        					style="margin-right:10px" icon="ui-icon-extlink" 
+		        					rendered="#{userController.userLoggedin}"/>
+		  
+			    </h:form>
+			    </div>
+		    </p:layoutUnit>  
+
+		    <p:layoutUnit position="south" size="40" collapsible="false">
+		        <div class="footer">Copyright &#169; 2014</div>
+		    </p:layoutUnit>  
+			<p:layoutUnit position="west" size="280" collapsible="false" header="Navigation">
+		        Navigation Links here <br/><br/>
+		        <h:form>
+		        <p:themeSwitcher value="#{userSettingsController.selectedTheme}" 
+		        					style="width:165px" var="theme">  
+						<f:selectItem itemLabel="Select Theme" itemValue="" />  
+						<f:selectItems value="#{userSettingsController.themePojos}" var="t" 
+										itemLabel="#{t.name}" itemValue="#{t}"/>
+							<p:ajax listener="#{userSettingsController.saveUserTheme}"/>	  
+						<p:column>  
+							#{theme.name}  
+						</p:column>
+						<p:column>  
+							<p:graphicImage value="/resources/images/themes/#{theme.image}"/>  
+						</p:column>
+					</p:themeSwitcher>
+					</h:form>
+		    </p:layoutUnit>
+		    
+		    <p:layoutUnit position="center">  
+		        <ui:insert name="bodyContent"/>
+		    </p:layoutUnit>  
+
+		</p:layout>
+		
+    	
+    </h:body>
+</f:view>
+</html>

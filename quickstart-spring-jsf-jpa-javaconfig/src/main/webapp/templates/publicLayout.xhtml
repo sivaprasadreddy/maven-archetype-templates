@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html" locale="en">
+    <h:head>
+        <title>#{msg['app.title']}</title>
+        <f:facet name="first">
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta http-equiv="pragma" content="no-cache"/>
+            <meta http-equiv="cache-control" content="no-cache"/>
+            <meta http-equiv="expires" content="0"/>
+        </f:facet>
+        <h:outputStylesheet library="css" name="styles.css"></h:outputStylesheet>
+        <h:outputScript library="js" name="app.js"></h:outputScript>
+        
+        <ui:insert name="head"/>
+    </h:head>
+    <h:body>
+    	
+    	<p:layout fullPage="true">  
+  
+		    <p:layoutUnit position="north" size="80">  
+		        <h1>#{msg['app.title']}</h1>
+		    </p:layoutUnit>  
+		  
+		    <p:layoutUnit position="south" size="30" collapsible="true">
+		        <h:outputText value="Copyright 2014" />  
+		    </p:layoutUnit>  
+		  
+		    <p:layoutUnit position="center">  
+		        <ui:insert name="bodyContent"/>
+		    </p:layoutUnit>  
+		  
+		</p:layout>
+
+    	
+    </h:body>
+</f:view>
+</html>
