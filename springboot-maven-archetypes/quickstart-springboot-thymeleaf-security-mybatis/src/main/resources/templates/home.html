@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      layout:decorator="mainLayout">
+    <head>
+        <title>SivaLabs</title>
+    </head>
+    <body>
+    	<div layout:fragment="content">
+	        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+	        
+	    	<div>
+	    		<form th:action="@{/messages}" method="post">
+	    			<textarea rows="3" cols="30" name="content"></textarea>
+		            <input type="submit" value="Submit"/>
+		        </form>
+	    	
+	    	</div>
+	    	<div th:each="msg : ${messagesData.content}">
+	    		<div th:text="${msg.content}"></div>
+	    		<div th:text="${msg.createdBy.name}"></div>
+	    	</div>
+    	</div>
+    </body>
+    
+</html>
