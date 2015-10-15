@@ -7,8 +7,9 @@
 	<artifactId>quickstart-spring4-app</artifactId>
 	<version>1.0.0</version>	
 	<packaging>jar</packaging>
-	<name>SivaLabs | Maven Archetypes | Quickstart Spring 4 App</name>
-	
+	<name>quickstart-spring4-app</name>
+	<description>SivaLabs | Maven Archetypes | Quickstart Spring 4 App</description>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.7</java.version>
@@ -119,12 +120,8 @@
 				<groupId>commons-fileupload</groupId>
 				<artifactId>commons-fileupload</artifactId>
 			</dependency>
-
-			<dependency>
-				<groupId>org.codehaus.groovy</groupId>
-				<artifactId>groovy-all</artifactId>
-			</dependency>
 			
 	</dependencies>
+	
 	
 </project>

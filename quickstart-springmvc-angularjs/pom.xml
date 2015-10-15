@@ -8,20 +8,8 @@
 	<name>quickstart-springmvc-angularjs</name>
 
 	<properties>
-		<failOnMissingWebXml>false</failOnMissingWebXml>
 		<java.version>1.7</java.version>
-		<junit.version>4.11</junit.version>
-		<slf4j.version>1.7.5</slf4j.version>
-		<logback.version>1.0.13</logback.version>
-		<spring.version>4.0.0.RELEASE</spring.version>
-		<spring-data-jpa.version>1.4.1.RELEASE</spring-data-jpa.version>
-		<spring-security.version>3.2.0.RELEASE</spring-security.version>
-		<hibernate.version>4.2.6.Final</hibernate.version>
-		<aspectj.version>1.7.2</aspectj.version>
-		<mysql.version>5.1.26</mysql.version>
-		<jackson-json.version>1.9.2</jackson-json.version>
-		<commons-dbcp.version>1.2.2</commons-dbcp.version>
-		<commons-lang3.version>3.1</commons-lang3.version>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
 	</properties>
 
 	<build>
@@ -39,25 +27,34 @@
 		</plugins>
 	</build>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.spring.platform</groupId>
+				<artifactId>platform-bom</artifactId>
+				<version>1.1.3.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
 	<dependencies>
 
 		<!-- Logging dependencies -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${slf4j.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
 		</dependency>
 
 
@@ -93,25 +90,21 @@
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>${aspectj.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
-			<version>${aspectj.version}</version>
 		</dependency>
 
 		<!-- ORM dependencies -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>${spring-data-jpa.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
 		</dependency>
 
 
@@ -120,7 +113,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -129,37 +121,31 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.version}</version>
 		</dependency>
 
 		<!-- Misc -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
-			<version>${commons-dbcp.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>${commons-lang3.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson-json.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4.3</version>
+			<artifactId>javax.mail-api</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>5.0.0.Final</version>
 		</dependency>
 
 
@@ -168,14 +154,13 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 		    <groupId>org.webjars</groupId>
 		    <artifactId>bootstrap</artifactId>
-		    <version>3.1.1-1</version>
+		    <version>3.3.4</version>
 		</dependency>
 		
 		<dependency>
@@ -192,18 +177,5 @@
 		
 
 	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-framework-bom</artifactId>
-				<version>${spring.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-
-		</dependencies>
-	</dependencyManagement>
 
 </project>
