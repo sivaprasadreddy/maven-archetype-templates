@@ -1,0 +1,23 @@
+<div class="col-md-12" style="padding-right: 2px;">
+	<div ng-repeat="post in posts">
+		
+		<div class="post">
+		  <h3> <a class="posttitle" href="#/posts/{{post.id}}">{{post.title}}</a> </h3>
+     	  <p><strong> {{post.createdOn | date:'EEEE yyyy-MMMM-dd' | uppercase}}</strong></p>
+		  <div>
+		    <div ng-bind-html="post.contentPreview"></div>
+		    <a href="#/posts/{{post.id}}">See more</a>
+		  </div>
+		</div>
+	</div>
+	<ul class="pager">
+	  <li class="previous" ng-if="postsPagination.hasPrevPage">
+	  	<a href="javascript:void(0);" ng-click="loadPosts(postsPagination.currentPage-1)">&larr; Newer</a>
+	  </li>
+	  <li class="next" ng-if="postsPagination.hasNextPage">
+	  	<a href="javascript:void(0);" ng-click="loadPosts(postsPagination.currentPage+1)"> Older &rarr;</a>
+	  </li>
+	</ul>
+
+</div>
+
