@@ -49,6 +49,6 @@ public class UserController {
 	{
 		List<User> blogs = userService.findAllUsers();
 		model.addAttribute("USERS", blogs);
-		return "admin/adminhome";
+		return "adminhome";
 	}
 }
