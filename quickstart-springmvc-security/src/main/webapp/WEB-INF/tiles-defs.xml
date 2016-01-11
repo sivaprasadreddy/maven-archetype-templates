@@ -21,7 +21,7 @@
   	<put-attribute name="bodyContent" value="/WEB-INF/views/userhome.jsp" />
   </definition>  
 
-  <definition name="adminhome" extends="baseLayout">
+  <definition name="admin/adminhome" extends="baseLayout">
   	<put-attribute name="bodyContent" value="/WEB-INF/views/admin/adminhome.jsp" />
   </definition>  
 
