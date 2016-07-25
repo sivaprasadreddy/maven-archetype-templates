@@ -1,0 +1,26 @@
+<div>
+	<form class="form-inline">
+		<div class="form-group">
+		    <input type="email" id="email" class="form-control" 
+		    		ng-model="newSubscriber.email" size="40"
+		    		placeholder="Enter email address"/>
+		</div>
+		<button class="btn btn-primary" ng-click="addSubscriber()">Subscribe</button> 
+	</form>
+</div>
+<div>
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="subscriber in subscribers">
+				<td>{{$index +1 }}</td>
+				<td>{{subscriber.email}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

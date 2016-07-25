@@ -1,0 +1,43 @@
+
+<div class="col-md-10">
+	
+	<div>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      
+		      <div class="modal-body">
+		        Post published successfully
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<h3>Create New Post</h3>
+		<form role="form">
+			<div class="form-group">
+				<label for="title">Title</label> 
+				<input type="text" class="form-control" id="title" placeholder="Title" ng-model="newPost.title">
+			</div>
+			<div class="form-group">
+				<div id="contentEditor"></div>
+			</div>
+			<!-- 
+			<div class="form-group">
+				<textarea class="form-control" id="content" placeholder="Enter comment" rows="15"  
+				ng-model="newPost.content"></textarea>
+			</div>
+			 -->
+			<button type="submit" class="btn btn-primary" ng-click="createPost()">Submit</button>
+		</form>
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	  $('#contentEditor').summernote({height: 300});
+});
+</script>

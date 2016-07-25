@@ -1,0 +1,39 @@
+<div class="col-md-12" style="padding-right: 2px;">
+	<div>
+		<button class="btn btn-danger" ng-click="deleteSelectedComments()">Delete</button>
+	</div>
+	<div>
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()"> </th>
+				<th>Comment</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="comment in comments">
+				<td><input type="checkbox" name="commentId" ng-model="comment.Selected"></td>
+				<td>
+					<div ng-bind-html="comment.contentPreview"></div>
+					<p>
+						<a href="" ng-click="deleteComment(comment.id)">Delete</a>
+					</p>
+				</td>
+				<td>{{comment.createdOn | date:'yyyy-MMM-dd'}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	<ul class="pager">
+	  <li class="previous" ng-if="commentsPagination.hasPrevPage">
+	  	<a href="javascript:void(0);" ng-click="loadComments(commentsPagination.currentPage-1)">&larr; Newer</a>
+	  </li>
+	  <li class="next" ng-if="commentsPagination.hasNextPage">
+	  	<a href="javascript:void(0);" ng-click="loadComments(commentsPagination.currentPage+1)"> Older &rarr;</a>
+	  </li>
+	</ul>
+
+</div>
+
+

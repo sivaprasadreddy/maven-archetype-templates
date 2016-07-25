@@ -1,0 +1,42 @@
+<div class="col-md-12" style="padding-right: 2px;">
+	<div>
+		
+	</div>
+	<div>
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th><input type="checkbox"> </th>
+				<th>Title</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="post in posts">
+				<td><input type="checkbox" name="postId"></td>
+				<td>
+					<p>{{post.title}}</p>
+					<p><a href="" ng-click="editPost(post.id)">Edit</a>
+						<a href="#/posts/{{post.id}}">View</a>
+						<a href="" ng-click="sharePost(post.id)">Share</a>
+						<a href="" ng-click="deletePost(post.id)">Delete</a>
+					</p>
+				
+				</td>
+				<td>{{post.createdOn | date:'yyyy-MMM-dd'}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	<ul class="pager">
+	  <li class="previous" ng-if="postsPagination.hasPrevPage">
+	  	<a href="javascript:void(0);" ng-click="loadPosts(postsPagination.currentPage-1)">&larr; Newer</a>
+	  </li>
+	  <li class="next" ng-if="postsPagination.hasNextPage">
+	  	<a href="javascript:void(0);" ng-click="loadPosts(postsPagination.currentPage+1)"> Older &rarr;</a>
+	  </li>
+	</ul>
+
+</div>
+
+
