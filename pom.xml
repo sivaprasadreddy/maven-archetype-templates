@@ -10,5 +10,32 @@
   <packaging>pom</packaging>
   <name>sivalabs-quickstart-archetypes</name>
   
-  
+  <modules>
+      <module>quickstart-java-app</module>
+      <module>quickstart-web-app</module>
+
+      <module>quickstart-javaee7</module>
+
+      <module>quickstart-spring-app-xml</module>
+      <module>quickstart-spring-app-javaconfig</module>
+      <module>quickstart-spring-jsf-jpa</module>
+      <module>quickstart-spring-jsf-jpa-javaconfig</module>
+
+      <module>quickstart-springmvc-xml</module>
+      <module>quickstart-springmvc-javaconfig</module>
+      <module>quickstart-springmvc-jpa-xml</module>
+      <module>quickstart-springmvc-jpa-javaconfig</module>
+      <module>quickstart-springmvc-mybatis</module>
+      <module>quickstart-springmvc-security</module>
+      <module>quickstart-springmvc-sitemesh</module>
+      <module>quickstart-springmvc-thymeleaf</module>
+      <module>quickstart-springmvc-angularjs</module>
+
+      <module>quickstart-springboot-thymeleaf-security</module>
+      <module>quickstart-springboot-thymeleaf-security-mybatis</module>
+      <module>quickstart-springboot-angularjs-basic</module>
+      <module>quickstart-springboot-security-angularjs</module>
+      <module>quickstart-springboot-token-security-angularjs</module>
+
+  </modules>
 </project>
